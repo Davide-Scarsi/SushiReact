@@ -21,6 +21,17 @@ class App extends Component {
       { id: 5, nome: "Shrimp", prezzo: 1.4, immagine: shrimp }
     ]
   }
+
+  // Funzione del componente padre "App" che filtra le Cards con id diverso da quello passato
+  handleDelete = cardId => {
+    const cards = this.state.cards.filter(card => card.id !== cardId); 
+    this.setState({cards})
+  }
+
+
+
+
+
   render() {
     return (
       <>
@@ -32,13 +43,20 @@ class App extends Component {
           <hr></hr>
           <div className='row'>
 
+
+
+            {/* CREA CARDS */}
+            {/* Con questo map ciclo tutto l'array "cards" dell'oggetto "state" e passo ad ogni card i suoi parametri */}
             {this.state.cards.map(e => (
-              <Card 
-              key={e.id}
-              nome={e.nome} 
-              immagine={e.immagine} 
-              prezzo={e.prezzo} />
+              <Card
+              key = {e.id}
+              // Ondelete lancia la funzione "handleDelete" passando come dato l'id della card
+              onDelete = {this.handleDelete}
+              card = {e} />
             ))}
+
+
+
 
           </div>
 

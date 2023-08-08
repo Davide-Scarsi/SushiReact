@@ -1,10 +1,11 @@
+import "./card.css"
 import React, { Component } from 'react';
 
 
 class Card extends Component {
     render() {
         return (
-            <div className='col-4'>
+            <div className='col-12 col-md-6 col-lg-4'>
                 <div className="card" style={{ width: '18rem', textAligh: 'center' }}>
                     <button onClick={() => this.props.onIncrement(this.props.card)} className="btn btn-primary">Aggiungi 
                         <span className='badge bg-white text-dark ms-2'>{this.props.card.quantità}</span>

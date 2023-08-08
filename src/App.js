@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Navbar from './components/navbar';
-import Card from './components/card';
+import Navbar from './components/navbar/navbar';
+import Card from './components/card/card';
 
 import california from './images/california.png';
 import dragon from './images/dragon.png';

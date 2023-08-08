@@ -11,6 +11,16 @@ import shrimp from './images/shrimp.png';
 
 
 class App extends Component {
+  state = {
+    cards: [
+      { id: 0, nome: "California", prezzo: 1.99, immagine: california },
+      { id: 1, nome: "Dragon", prezzo: 2, immagine: dragon },
+      { id: 2, nome: "Dynamite", prezzo: 1.3, immagine: dynamite },
+      { id: 3, nome: "Philadelphia", prezzo: 2.4, immagine: philadelphia },
+      { id: 4, nome: "Rainbow", prezzo: 0.8, immagine: rainbow },
+      { id: 5, nome: "Shrimp", prezzo: 1.4, immagine: shrimp }
+    ]
+  }
   render() {
     return (
       <>
@@ -21,36 +31,14 @@ class App extends Component {
           <h1>Cosa vuoi mangiare?</h1>
           <hr></hr>
           <div className='row'>
-            <Card 
-            immagine ={california}
-            nome = "California"
-            prezzo = {1.99}
-            />
-            <Card 
-            immagine ={dragon}
-            nome = "Dragon"
-            prezzo = {2}
-            />
-            <Card 
-            immagine ={dynamite}
-            nome = "Dynamite"
-            prezzo = {1.3}
-            />
-            <Card 
-            immagine ={philadelphia}
-            nome = "Philadelphia"
-            prezzo = {2.4}
-            />
-            <Card 
-            immagine ={rainbow}
-            nome = "Rainbow"
-            prezzo = {0.8}
-            />
-            <Card 
-            immagine ={shrimp}
-            nome = "Shrimp"
-            prezzo = {1.4}
-            />
+
+            {this.state.cards.map(e => (
+              <Card 
+              key={e.id}
+              nome={e.nome} 
+              immagine={e.immagine} 
+              prezzo={e.prezzo} />
+            ))}
 
           </div>
 

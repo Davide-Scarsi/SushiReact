@@ -48,7 +48,7 @@ class App extends Component {
 
 
         <div className='container'>
-          <h1>Cosa vuoi mangiare?</h1>
+          <h1>Cosa vuoi ordinare?</h1>
           <hr></hr>
           <div className='row'>
 
